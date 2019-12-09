@@ -7,6 +7,8 @@ import { of } from "rxjs/observable/of";
 
 @Injectable()
 export class FirebaseDataProvider{
+    
+
     private ref: any;
     private classrooms = [];
     private members = [];
