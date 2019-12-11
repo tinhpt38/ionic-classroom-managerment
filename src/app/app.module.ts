@@ -1,3 +1,5 @@
+import { MembersPage } from './../pages/members/members';
+import { FirebaseDataProvider } from './../provider/firebase_data_provider';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -24,6 +26,7 @@ const firebaseConfig = {
   declarations: [
     MyApp,
     HomePage,
+    MembersPage
   ],
   imports: [
     BrowserModule,
@@ -34,11 +37,13 @@ const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    MembersPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    FirebaseDataProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

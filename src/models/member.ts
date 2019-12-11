@@ -1,16 +1,16 @@
 
 
 
-class Member{
+export class Member{
 
     public email: string
     constructor(
         public id: string,
-        public classID: number,
+        public classID: string,
         public name: string,
         public major: string,
         public birthday: string,
-        public gender: string,
+        public gender: Gender,
         public idCard: string,
         public phone: string,
         public address: string,
@@ -27,6 +27,10 @@ class Member{
     }
 }
 
-enum MemberRole{
+export enum MemberRole{
     teacher, monitor, member
+}
+
+export enum Gender{
+    Male, Female, Orther
 }

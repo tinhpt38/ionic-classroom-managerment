@@ -1,21 +1,13 @@
 
 
 
-class Classroom{
-    private password: string;
+export class Classroom{
     constructor(
         public id: string,
         public sortName: string,
-        public fullNane: string,
-        public prefix: string
+        public fullName: string,
+        public prefix: string,
+        public password: string
     ){}
 
-
-    getPassword(): string{
-        return this.password;
-    }
-
-    setPassword(pwd: string){
-        this.password = pwd;
-    }
 }
