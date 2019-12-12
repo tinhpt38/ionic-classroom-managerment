@@ -20,15 +20,48 @@ export class IntroduceClassroomPage implements OnInit{
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad IntroduceClassroomPage');
   }
 
   ngOnInit(){
     this.classroom = this.navParams.data;
-    this.monitorName = this.classroom.monitorId != null ? this.classroom.monitorId:"Not set";
-    this.teacherName = this.classroom.teacherId != null ? this.classroom.teacherId:"Not set";
+    this.total = this.classroom.members.length;
+    this.readingData();
   }
+
+
+  readingData(){
+    this.findMale();
+    this.findRole();
+  }
+
+  findRole(){
+    this.classroom.members.forEach((val) =>{
+      if(val.role == "teacher"){
+        this.teacherName = val.name;
+      }
+      if(val.role =="monitor"){
+        this.monitorName == val.name;
+      }
+    })
+    this.monitorName = this.monitorName == null?"Not set":this.monitorName;
+    this.teacherName = this.teacherName == null?"Not set":this.teacherName;
+  }
+
+  findMale(){
+    let count = 0;
+    this.classroom.members.forEach((val) =>{
+      if(val.gender == "male"){
+        count++;
+      }
+    })
+    this.male = count;
+    this.female = this.total - this.male;
+  }
+
+
 
   onViewDetailClick(){
     this.navCtrl.push(AuthenMemberIdPage, this.classroom);
