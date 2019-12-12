@@ -10,11 +10,11 @@ export class Member{
         public name: string,
         public major: string,
         public birthday: string,
-        public gender: Gender,
+        public gender: string,
         public idCard: string,
         public phone: string,
         public address: string,
-        public role: MemberRole
+        public role: string
     ){
         this.email = this.id + "@dlu.edu.vn";
         this.obscuseIdCard();
@@ -25,12 +25,4 @@ export class Member{
      let right3 = this.idCard.substr((this.idCard.length-3), this.idCard.length);
      this.idCard = left3 + "xxx"+right3;
     }
-}
-
-export enum MemberRole{
-    teacher, monitor, member
-}
-
-export enum Gender{
-    Male, Female, Orther
 }

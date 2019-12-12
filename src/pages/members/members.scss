@@ -1,3 +1,51 @@
 page-members {
+  .item-root {
+    display: flex;
+    width: 100%;
+    border: 1px solid #e45e5d;
+    border-radius: 8px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
 
+  .item-root .avatar {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item-root .avatar img {
+    width: 92px;
+    height: 92px;
+  }
+
+  .item-root .info-root {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-root .name {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  .info-root .role {
+    font-size: 18px;
+    color: #e45e5d;
+    text-transform: uppercase;
+  }
+
+  .info-root .major {
+    font-size: 22px;
+    color: #707077;
+    text-transform: uppercase;
+  }
 }

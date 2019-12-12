@@ -1,16 +1,24 @@
-
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  <div *ngFor="let item of classroooms" >
-    <ion-item>
-      <button ion-button (click)="onClassroomClick(item)">
-        {{item.fullName}}
-      </button>
-    </ion-item>
+  <div class="flex-home">
+    <div class="logo">
+      <img src="../../assets/imgs/applogo.png">
+    </div>
+    <div class="control">
+      <div>
+        <button ion-button class="fit-width-button" (click)="onNewClassroomClick()">
+          NEW CLASSROOM
+        </button>
+        <div class="margin-vertical-32"></div>
+        <button ion-button class="fit-width-button" (click)="onSelectClassroomClick()">
+          SELECT CLASSROOM
+        </button>
+      </div>
+      <div>
+        <ion-label class="about-us" (click)="onAboutUsClick()">
+          About Us
+        </ion-label>
+      </div>
+
+    </div>
   </div>
 </ion-content>

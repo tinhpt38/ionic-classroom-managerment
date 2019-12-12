@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>SELECT CLASSROOM</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="isloading" >
+    <div>
+      <h3>
+        Loading Data
+      </h3>
+    </div>
+  </div>
+  <div *ngIf="!isloading">
+      <div *ngFor="let item of classrooms">
+          <div class="margin-vertical-24">
+            <button ion-button class="item" (click)="onItemClick(item)">
+              {{item.fullName}}
+            </button>
+          </div>
+        </div>
+  </div>
+</ion-content>

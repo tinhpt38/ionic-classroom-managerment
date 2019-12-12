@@ -1,4 +1,3 @@
-import { MemberRole, Gender } from './../models/member';
 import { ResultErr } from './result_err';
 import { Injectable } from "@angular/core";
 import { AngularFireDatabase } from "angularfire2/database";
@@ -21,30 +20,15 @@ export class FirebaseDataProvider {
     constructor(private service: AngularFireDatabase) {
 
     }
-    start() {
-        this.getAllClassroom();
-        this.pushDefauleMember();
-    }
-
-    pushDefaultClassroom() {
-        let ctk40: any = new Classroom("CTK40", "IT", "Công nghệ thông tin k40", "161", "abc");
-        let ctk41: any = new Classroom("CTK41", "IT", "Công nghệ thông tin k41", "171", "abc");
-        this.addClassroom(ctk40);
-        this.addClassroom(ctk41);
-    }
-
-    pushDefauleMember() {
-        let tinh = new Member("1610227", "CTK40", "Liya", "KTPM", "08-03-1998", Gender.Male, "215395784",
-            "0352974899", "Phuong 8, Trang Khanh Du", MemberRole.member);
-        let ctk40: any = new Classroom("CTK40", "IT", "Công nghệ thông tin k40", "161", "abc");
-        this.addMember(tinh, ctk40);
-        console.log("member: " +this.members);
+    async start() {
+        await this.getAllClassroom();
     }
 
     getAllClassroom() {
         return new Promise<any[]>((resolve, reject) => {
             this.service.list(this.rootRef).valueChanges().subscribe(value => {
                 this.classrooms = value;
+                console.log(this.classrooms);
                 resolve(value);
             })
         });
@@ -52,10 +36,11 @@ export class FirebaseDataProvider {
 
     getAllMembers(classId: string) {
         return new Promise<any[]>((resolve, reject) => {
-            let reft = this.rootRef + classId;
+            let reft = this.rootRef + classId + "/members";
             this.ref = firebase.database().ref(reft);
             this.service.list(this.ref).valueChanges().subscribe((values) => {
                 this.members = values;
+                console.log(this.members);
                 resolve(values);
             })
         })
@@ -74,41 +59,51 @@ export class FirebaseDataProvider {
     }
 
     addMember(member: Member, clsr: Classroom): ResultErr {
-        if (!this.isClassroomExist(clsr)) {
-            return new ResultErr(false, "Lớp không tồn tại!", null)
-        } else if (!this.isMemberExist(member)) {
-            return new ResultErr(false, "Sinh viên bị trùng không tồn tại!", null)
-        }
-        let reft = this.rootRef + clsr.id;
-        this.service.list(reft).push(member);
+        clsr.members.push(member);
+        this.addClassroom(clsr)
         this.getAllMembers(clsr.id);
         return new ResultErr(true, null, this.members)
     }
 
-    isClassroomExist(clr: Classroom): boolean {
-        this.classrooms.forEach(val => {
-            if (val.id.toLowerCase() == clr.id.toLowerCase())
+    async isClassroomExist(clr: Classroom) {
+        let local: any[] = await this.getAllClassroom();
+        for (let i = 0; i < local.length; i++) {
+            if ((local[i] as Classroom).id == clr.id.toLowerCase()) {
                 return true;
-        })
-        return false;
-    }
-
-    isMemberExist(me: Member): boolean {
-        this.members.forEach(val => {
-            if (val.id.toLowerCase() == me.id.toLowerCase())
-                return true;
-        })
-        return false;
-    }
-
-
-    addClassroom(classroom: Classroom): ResultErr {
-        if (this.isClassroomExist(classroom)) {
-            return new ResultErr(false, "Mã số sinh viên bị trùng!", null);
+            }
         }
-        this.service.list(this.rootRef).push(classroom);
-        this.getAllClassroom();
-        return new ResultErr(false, "Thêm thành công", this.classrooms);
+        return false;
+    }
+
+    async isMemberExist(memberID: string, classID: string) {
+        let local = await this.getAllMembers(classID);
+        for (let i = 0; i < local.length; i++) {
+            if (local[i].id == memberID) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    async addClassroom(classroom: Classroom) {
+        let flag = await this.isClassroomExist(classroom);
+        if (flag) {
+            return new ResultErr(false, "Lớp đã tồn tại!", null);
+        } else {
+            firebase.database().ref(this.rootRef).child(classroom.id).set({
+                id: classroom.id,
+                fullName: classroom.fullName,
+                sortName: classroom.sortName,
+                prefix: classroom.prefix,
+                password: classroom.password,
+                monitorId: classroom.monitorId,
+                teacherId: classroom.teacherId,
+                members: classroom.members
+            });
+            await this.getAllClassroom();
+            return new ResultErr(true, "Thêm thành công", this.classrooms);
+        }
     }
 
     delete() {

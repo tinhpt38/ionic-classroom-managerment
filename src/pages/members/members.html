@@ -1,17 +1,22 @@
-<!--
-  Generated template for the MembersPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-  <ion-navbar>
-    <ion-title>Members</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>MEMBERS</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<ion-label>
-{{id}}
-</ion-label>
+  <div *ngFor="let item of members">
+
+    <div class="item-root">
+      <div class="avatar">
+        <img src="../../assets/imgs/happy.png">
+      </div>
+      <div class="info-root">
+        <ion-label class="name">{{item.name}}</ion-label>
+        <ion-label class="role">{{item.id}}</ion-label>
+        <ion-label class="major">{{item.major}}</ion-label>
+      </div>
+    </div>
+
+  </div>
 </ion-content>

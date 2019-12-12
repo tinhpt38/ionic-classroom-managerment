@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{classroom.id}}</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="flex-page">
+    <div class="flex-top-40">
+      <div  class="circle-sort-name">
+          <ion-label>
+              {{classroom.sortName.substr(0,2).toUpperCase()}}
+            </ion-label>
+      </div>
+      <ion-label class="full-name">
+        {{classroom.fullName.toUpperCase()}}
+      </ion-label>
+    </div>
+    <div class="flex-center-30">
+      <ion-grid class="grid-view">
+        <ion-row>
+          <ion-col class="col-left">
+            <div >
+              Teacher
+            </div>
+            <div >
+              Monitor
+            </div>
+            <div>
+              Total
+            </div>
+            <div>
+              Male
+            </div>
+            <div>
+              Female
+            </div>
+          </ion-col>
+          <ion-col class="col-right">
+            <div>
+              {{teacherName}}
+            </div>
+            <div>
+              {{monitorName}}
+            </div>
+            <div>
+              {{total}}
+            </div>
+            <div>
+              {{male}}
+            </div>
+            <div>
+              {{female}}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="flex-bottom-30">
+      <button ion-button class="fit-width-button" 
+      (click)="onNewMemberClick()">
+        NEW MEMBER
+      </button>
+      <div class="margin-vertical-32"></div>
+      <button ion-button class="fit-width-button"
+      (click)="onViewDetailClick()">
+        VIEW DETAIL
+      </button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>AUTHENTICATION</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="margin-vertical-8">
+    <ion-label>
+      Student ID
+    </ion-label>
+    <ion-input [(ngModel)]="memberID" placeholder="ID" class="common-input">
+    </ion-input>
+  </div>
+  <div>
+    <button ion-button (click)="onViewDetailClick()"
+    class="fit-width-button">
+      VIEW DETAIL
+    </button>
+  </div>
+</ion-content>

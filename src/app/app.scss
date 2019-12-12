@@ -1,16 +1,40 @@
-// http://ionicframework.com/docs/theming/
+.fit-width-button{
+    width: 100%;
+    background: #E45E5D;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    height: 54px;
+}
 
+.margin-vertical-32{
+    width: 100%;
+    height: 32px;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.tool-bar{
+    background: #E45E5D;
+    color: white;
+    font-size: 24px;
+}
+
+.common-input{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #707070;
+}
+
+.margin-vertical-8{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.margin-vertical-16{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.margin-vertical-24{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}

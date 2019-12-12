@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>NEW CLASSROOM</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="margin-vertical-8">
+    <ion-label>
+      ID
+    </ion-label>
+    <ion-input [(ngModel)]="id" placeholder="ID" class="common-input">
+    </ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>
+      Sort Name
+    </ion-label>
+    <ion-input [(ngModel)]="sortName" placeholder="Sort Name" class="common-input">
+    </ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>
+      Full Name
+    </ion-label>
+    <ion-input [(ngModel)]="fullName" placeholder="Full Name" class="common-input">
+    </ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>
+      Prefix
+    </ion-label>
+    <ion-input [(ngModel)]="prefix" placeholder="Prefix" class="common-input">
+    </ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>
+      Password
+    </ion-label>
+    <ion-input [(ngModel)]="pwd" placeholder="Password" class="common-input">
+    </ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>
+      Cornfirm
+    </ion-label>
+    <ion-input [(ngModel)]="cornfirm" placeholder="Cornfirm" class="common-input">
+    </ion-input>
+  </div>
+  <div>
+  <div class="margin-vertical-32"></div>
+    <button ion-button class="fit-width-button" (click)="onDoneClick()">
+      DONE
+    </button>
+  </div>
+  <div class="margin-vertical-32"></div>
+</ion-content>

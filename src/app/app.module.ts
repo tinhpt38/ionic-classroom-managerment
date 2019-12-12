@@ -1,3 +1,10 @@
+import { AddMemberPage } from './../pages/add-member/add-member';
+import { AddMemberBasicPage } from './../pages/add-member-basic/add-member-basic';
+import { AuthentPasswordPage } from './../pages/authent-password/authent-password';
+import { AuthenMemberIdPage } from './../pages/authen-member-id/authen-member-id';
+import { IntroduceClassroomPage } from './../pages/introduce-classroom/introduce-classroom';
+import { SelectClassroomPage } from './../pages/select-classroom/select-classroom';
+import { NewClassroomPage } from './../pages/new-classroom/new-classroom';
 import { MembersPage } from './../pages/members/members';
 import { FirebaseDataProvider } from './../provider/firebase_data_provider';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,8 +12,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -26,7 +33,15 @@ const firebaseConfig = {
   declarations: [
     MyApp,
     HomePage,
-    MembersPage
+    MembersPage,
+    NewClassroomPage,
+    SelectClassroomPage,
+    IntroduceClassroomPage,
+    AuthenMemberIdPage,
+    AuthentPasswordPage,
+    AddMemberBasicPage,
+    AddMemberPage,
+
   ],
   imports: [
     BrowserModule,
@@ -38,13 +53,21 @@ const firebaseConfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    MembersPage
+    MembersPage,
+    NewClassroomPage,
+    SelectClassroomPage,
+    IntroduceClassroomPage,
+    AuthenMemberIdPage,
+    AuthentPasswordPage,
+    AddMemberBasicPage,
+    AddMemberPage,
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     FirebaseDataProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

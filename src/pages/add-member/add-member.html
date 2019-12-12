@@ -1,0 +1,46 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>ADD MEMBER</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="margin-vertical-8">
+    <ion-label>Major</ion-label>
+    <ion-input [(ngModel)]="major" type="text" placeholder="Major" class="common-input"></ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>Role</ion-label>
+    <ion-input [(ngModel)]="role" type="text" placeholder="Teacher || Monitor || Member" class="common-input"></ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>Birthday</ion-label>
+    <ion-input [(ngModel)]="birthday" type="text" placeholder="31/12/1998" class="common-input"></ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>Gender</ion-label>
+    <ion-input [(ngModel)]="gender" type="text" placeholder="Male || Female || Other" class="common-input"></ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>ID Card</ion-label>
+    <ion-input [(ngModel)]="idCard" type="number" placeholder="111xxx222" class="common-input"></ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>Phone</ion-label>
+    <ion-input [(ngModel)]="phone" type="text" placeholder="Phone" class="common-input"></ion-input>
+  </div>
+  <div class="margin-vertical-8">
+    <ion-label>Address</ion-label>
+    <ion-input [(ngModel)]="address" type="text" placeholder="Address" class="common-input"></ion-input>
+  </div>
+
+  <div class="margin-vertial-32"></div>
+  <div>
+    <button ion-button class="fit-width-button" 
+    (click)="onContinueClick()">
+      CONTINUE
+    </button>
+  </div>
+  <div class="margin-vertial-32"></div>
+</ion-content>

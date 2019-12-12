@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>AUTHENTICATION ID</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="margin-vertical-8">
+    <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="name" type="text" placeholder="Name" class="common-input">
+    </ion-input>
+  </div>
+
+  <div class="margin-vertical-8">
+    <ion-label>ID</ion-label>
+    <ion-input [(ngModel)]="id" type="text" placeholder="ID" class="common-input">
+    </ion-input>
+  </div>
+  <div>
+    <button ion-button (click)="onContinueClick()"
+    class="fit-width-button">
+      CONTINUE
+    </button>
+  </div>
+</ion-content>
