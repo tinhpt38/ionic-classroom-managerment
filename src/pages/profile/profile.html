@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{member.name.toUpperCase()}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="root">
+    
+    <div class="top">
+      <div class="avatar">
+        <img src=<img src="../../assets/imgs/happy.png">
+      </div>
+      <div class="name">
+        <ion-label>{{member.name.toUpperCase()}}</ion-label>
+      </div>
+      <div class="sub-info">
+        <ion-label>#{{member.id}}</ion-label>
+        <ion-label>{{member.major.toUpperCase()}}</ion-label>
+      </div>
+      
+    </div>
+   <div class="bottom">
+    <ion-grid class="grid-view">
+      <ion-row class="row">
+        <ion-col >
+          <div >Birthday</div>
+          <div >Hometown</div>
+          <div>ID card</div>
+          <div>Email</div>
+          <div>Phone</div>
+          <div>Address</div>
+        </ion-col>
+        <ion-col>
+          <div>{{member.birthday}}</div>
+          <div>{{member.address}}</div>
+          <div>{{member.idCard}}</div>
+          <div>{{member.email}}</div>
+          <div>{{member.phone}}</div>
+          <div>{{member.address}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  <div class="margin-vertical-32"></div>
+  
+    <button ion-button class="fit-width-button"
+    (click)="onDeleteMemberClick()">
+      DELETE MEMBER
+    </button>
+   </div>
+      
+  </div>
+
+</ion-content>

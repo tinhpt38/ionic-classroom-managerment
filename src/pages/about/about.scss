@@ -1,0 +1,52 @@
+page-about {
+
+    .title{
+        width: 100%;
+        text-align: center;
+        color: #E45E5D;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .root-item{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .root-item .avatar{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .root-item .avatar img{
+        width: 40%;
+    }
+
+    .root-item .name{
+        width: 100%;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .root-item .sub-info{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+    }
+
+    .root-item .line{
+        width: 100%;
+        margin-left: 24px;
+        margin-right: 24px;
+        height: 1px;
+        background: #E45E5D;
+        margin-bottom: 16px;
+    }
+}

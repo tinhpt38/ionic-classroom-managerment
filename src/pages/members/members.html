@@ -6,8 +6,7 @@
 
 <ion-content padding>
   <div *ngFor="let item of members">
-
-    <div class="item-root">
+    <div class="item-root" (click)="onItemClick(item)">
       <div class="avatar">
         <img src="../../assets/imgs/happy.png">
       </div>

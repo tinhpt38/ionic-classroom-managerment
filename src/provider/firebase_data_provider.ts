@@ -1,9 +1,9 @@
+import { Member } from './../models/member';
 import { ResultErr } from './result_err';
 import { Injectable } from "@angular/core";
 import { AngularFireDatabase } from "angularfire2/database";
 import * as firebase from "firebase/app";
 import { Classroom } from "./../models/classroom";
-import { Member } from "../models/member";
 
 
 @Injectable()
@@ -58,13 +58,6 @@ export class FirebaseDataProvider {
         return null;
     }
 
-    addMember(member: Member, clsr: Classroom): ResultErr {
-        clsr.members.push(member);
-        this.addClassroom(clsr)
-        this.getAllMembers(clsr.id);
-        return new ResultErr(true, null, this.members)
-    }
-
     async isClassroomExist(clr: Classroom) {
         let local: any[] = await this.getAllClassroom();
         for (let i = 0; i < local.length; i++) {
@@ -99,7 +92,7 @@ export class FirebaseDataProvider {
                 password: classroom.password,
                 monitorId: classroom.monitorId,
                 teacherId: classroom.teacherId,
-                members: classroom.members
+                members: classroom.members,
             });
             await this.getAllClassroom();
             return new ResultErr(true, "Thêm thành công", this.classrooms);
@@ -108,6 +101,12 @@ export class FirebaseDataProvider {
 
     delete() {
         this.service.list(this.rootRef).remove();
+    }
+
+    deleteMember(classroom: Classroom, member:Member){
+        let indexOf = classroom.members.indexOf(member);
+        classroom.members.splice(indexOf,0);
+        this.addClassroom(classroom);
     }
 
 }

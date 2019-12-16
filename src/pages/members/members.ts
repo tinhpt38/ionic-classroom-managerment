@@ -1,3 +1,4 @@
+import { ProfilePage } from './../profile/profile';
 import { Member } from './../../models/member';
 import { Classroom } from './../../models/classroom';
 import { FirebaseDataProvider } from './../../provider/firebase_data_provider';
@@ -37,6 +38,14 @@ export class MembersPage implements OnInit{
   convertData(){
     let teacher = this.findTeacher();
     this.members.splice(0,0,teacher);
+  }
+
+  onItemClick(item: Member){
+    let data = {
+      classroom: this.classroom,
+      member: item,
+    }
+    this.navCtrl.push(ProfilePage, data);
   }
 
 

@@ -1,3 +1,4 @@
+import { AboutPage } from './../about/about';
 import { SelectClassroomPage } from './../select-classroom/select-classroom';
 import { NewClassroomPage } from './../new-classroom/new-classroom';
 import { Component } from '@angular/core';
@@ -27,7 +28,7 @@ export class HomePage {
   }
 
   onAboutUsClick(){
-
+    this.navCtrl.push(AboutPage);
   }
 
 }

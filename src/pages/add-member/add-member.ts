@@ -1,3 +1,4 @@
+import { Classroom } from './../../models/classroom';
 import { MembersPage } from './../members/members';
 import { ResultErr } from './../../provider/result_err';
 import { FirebaseDataProvider } from './../../provider/firebase_data_provider';
@@ -32,7 +33,7 @@ export class AddMemberPage implements OnInit {
   }
 
 
-  onContinueClick() {
+  async onContinueClick() {
     if (this.major == null ||
       this.birthday == null ||
       this.gender == null ||
@@ -57,7 +58,10 @@ export class AddMemberPage implements OnInit {
       this.address,
       this.role
       );
-      let result: ResultErr = this.service.addMember(member,this.data.classroom);
+      let classroom: Classroom = this.data.classroom;
+      classroom.members = [];
+      classroom.members.push(member);
+      let result: ResultErr = await this.service.addClassroom(classroom);
         if(result.state){
           this.navCtrl.push(MembersPage);
         }else{

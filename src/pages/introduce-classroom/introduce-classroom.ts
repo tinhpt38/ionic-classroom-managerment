@@ -10,8 +10,8 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class IntroduceClassroomPage implements OnInit{
 
-  public teacherName: string;
-  public monitorName: string;
+  public teacherName: string = "Not set";
+  public monitorName: string = "Not set";
   public total: number = 0;
   public male: number = 0;
   public female: number = 0;
@@ -27,14 +27,16 @@ export class IntroduceClassroomPage implements OnInit{
 
   ngOnInit(){
     this.classroom = this.navParams.data;
-    this.total = this.classroom.members.length;
-    this.readingData();
+    this.preparingData();
   }
 
 
-  readingData(){
-    this.findMale();
-    this.findRole();
+  preparingData(){
+    if(this.classroom.members != null){
+      this.total = this.classroom.members.length;
+      this.findMale();
+      this.findRole();
+    }
   }
 
   findRole(){

@@ -1,0 +1,58 @@
+page-profile {
+  
+  .root {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .top{
+    display: flex;
+    width: 100%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .bottom{
+    display: flex;
+    width: 100%;
+    height: 60%;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+  }
+  .avatar {
+    width: 30%;
+  }
+
+  .avatar img {
+    border-radius: 50%;
+  }
+
+  .name {
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+  }
+  .sub-info{
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    color: #707070;
+  }
+
+  .row{
+    padding: 0;
+    width: 100%;
+    color: #707070;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

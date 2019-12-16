@@ -1,3 +1,5 @@
+import { AboutPage } from './../pages/about/about';
+import { ProfilePage } from './../pages/profile/profile';
 import { AddMemberPage } from './../pages/add-member/add-member';
 import { AddMemberBasicPage } from './../pages/add-member-basic/add-member-basic';
 import { AuthentPasswordPage } from './../pages/authent-password/authent-password';
@@ -41,6 +43,8 @@ const firebaseConfig = {
     AuthentPasswordPage,
     AddMemberBasicPage,
     AddMemberPage,
+    ProfilePage,
+    AboutPage,
 
   ],
   imports: [
@@ -61,6 +65,9 @@ const firebaseConfig = {
     AuthentPasswordPage,
     AddMemberBasicPage,
     AddMemberPage,
+    ProfilePage,
+    AboutPage,
+    
     
   ],
   providers: [

@@ -1,0 +1,24 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>ABOUT</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-label class="title"> Nhà phát triển </ion-label>
+  <div *ngFor="let item of devs" >
+    <div class="root-item">
+      <div class="avatar">
+        <img src="../../assets/imgs/happy.png">
+      </div>
+      <div class="name">
+        <ion-label>{{item.name}}</ion-label>
+      </div>
+      <div class="sub-info">
+        <ion-label>{{item.email}}</ion-label>
+      </div>
+      <div class="line"></div>
+    </div>
+  </div>
+</ion-content>
