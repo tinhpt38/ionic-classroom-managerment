@@ -66,7 +66,9 @@ export class IntroduceClassroomPage implements OnInit{
 
 
   onViewDetailClick(){
-    this.navCtrl.push(AuthenMemberIdPage, this.classroom);
+    this.navCtrl.push(AuthenMemberIdPage, this.classroom).then(()=>{
+      this.navCtrl.remove(this.navCtrl.getActive().index - 2,2);
+    });
   }
   
   onNewMemberClick(){

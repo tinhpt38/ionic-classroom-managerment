@@ -1,4 +1,3 @@
-import { HomePage } from './../home/home';
 import { Classroom } from './../../models/classroom';
 import { FirebaseDataProvider } from './../../provider/firebase_data_provider';
 import { Member } from './../../models/member';
@@ -31,7 +30,7 @@ export class ProfilePage implements OnInit {
 
   onDeleteMemberClick(){
     this.service.deleteMember(this.classroom, this.member);
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.pop();
   }
 
 }

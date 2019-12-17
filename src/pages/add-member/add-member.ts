@@ -59,11 +59,14 @@ export class AddMemberPage implements OnInit {
       this.role
       );
       let classroom: Classroom = this.data.classroom;
-      classroom.members = [];
+      let members = classroom.members;
+      if(members == null){
+        classroom.members = [];
+      }
       classroom.members.push(member);
       let result: ResultErr = await this.service.addClassroom(classroom);
         if(result.state){
-          this.navCtrl.push(MembersPage);
+          this.pushAndReplacement(classroom);
         }else{
           this.showErr(result.message);
         }
@@ -82,7 +85,7 @@ export class AddMemberPage implements OnInit {
   isValidRole() {
     if (this.role.toLowerCase() == "teacher"
       || this.role.toLowerCase() == "member"
-      || this.role.toLowerCase() == "moinitor") {
+      || this.role.toLowerCase() == "monitor") {
       return true;
     }
     return false;
@@ -98,4 +101,10 @@ export class AddMemberPage implements OnInit {
     alert.present();
   }
 
+  pushAndReplacement(param: Classroom){
+    this.navCtrl.push(MembersPage,param).then(()=>{
+      let startIndex: number = this.navCtrl.getActive().index -3;
+      this.navCtrl.remove(startIndex,5);
+    });
+  }
 }
