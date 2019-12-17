@@ -1,19 +1,17 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>{{classroom.id}}</ion-title>
-   <ion-buttons >
- 
-   </ion-buttons>
+    <ion-buttons>
+
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <div class="flex-page">
     <div class="flex-top-40">
-      <div  class="circle-sort-name">
-          <ion-label>
-              {{classroom.sortName.substr(0,2).toUpperCase()}}
-            </ion-label>
+      <div class="circle-sort-name">
+        {{classroom.sortName.substr(0,2).toUpperCase()}}
       </div>
       <ion-label class="full-name">
         {{classroom.fullName.toUpperCase()}}
@@ -23,8 +21,8 @@
       <ion-grid class="grid-view">
         <ion-row class="row">
           <ion-col id="col-left">
-            <div >Teacher</div>
-            <div >Monitor</div>
+            <div>Teacher</div>
+            <div>Monitor</div>
             <div>Total</div>
             <div>Male</div>
             <div>Female</div>
@@ -40,13 +38,11 @@
       </ion-grid>
     </div>
     <div class="flex-bottom-30">
-      <button ion-button class="fit-width-button" 
-      (click)="onNewMemberClick()">
+      <button ion-button class="fit-width-button" (click)="onNewMemberClick()">
         NEW MEMBER
       </button>
       <div class="margin-vertical-32"></div>
-      <button ion-button class="fit-width-button"
-      (click)="onViewDetailClick()">
+      <button ion-button class="fit-width-button" (click)="onViewDetailClick()">
         VIEW DETAIL
       </button>
     </div>
