@@ -5,9 +5,10 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-scroll>
 
+  </ion-scroll>
   <div class="root">
-    
     <div class="top">
       <div class="avatar">
         <img src=<img src="../../assets/imgs/happy.png">
@@ -19,38 +20,37 @@
         <ion-label class="ov">#{{member.id}}</ion-label>
         <ion-label>{{member.major.toUpperCase()}}</ion-label>
       </div>
-      
+
     </div>
-   <div class="bottom">
-    <ion-grid class="grid-view">
-      <ion-row class="row">
-        <ion-col >
-          <div >Birthday</div>
-          <div >Hometown</div>
-          <div>ID card</div>
-          <div>Email</div>
-          <div>Phone</div>
-          <div>Address</div>
-        </ion-col>
-        <ion-col>
-          <div>{{member.birthday}}</div>
-          <div>{{member.address}}</div>
-          <div>{{member.idCard}}</div>
-          <div>{{member.email}}</div>
-          <div>{{member.phone}}</div>
-          <div>{{member.address}}</div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  
-  <div class="margin-vertical-32"></div>
-  
-    <button ion-button class="fit-width-button"
-    (click)="onDeleteMemberClick()">
-      DELETE MEMBER
-    </button>
-   </div>
-      
+    <div class="bottom">
+      <ion-grid class="grid-view">
+        <ion-row class="row">
+          <ion-col>
+            <div>Birthday</div>
+            <div>Hometown</div>
+            <div>ID card</div>
+            <div>Email</div>
+            <div>Phone</div>
+            <div>Address</div>
+          </ion-col>
+          <ion-col>
+              <div class="max-line">{{member.birthday}}</div>
+              <div class="max-line">{{member.address}}</div>
+              <div class="max-line">{{member.idCard}}</div>
+              <div class="max-line">{{member.email}}</div>
+              <div class="max-line">{{member.phone}}</div>
+              <div class="max-line">{{member.address}}</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div class="margin-vertical-32"></div>
+
+      <button ion-button class="fit-width-button" (click)="onDeleteMemberClick()">
+        DELETE MEMBER
+      </button>
+    </div>
+
   </div>
 
 </ion-content>

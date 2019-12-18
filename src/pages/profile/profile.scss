@@ -57,10 +57,16 @@ page-profile {
   }
 
   .row{
-    padding: 0;
     width: 100%;
     color: #707070;
     font-size: 20px;
     font-weight: bold;
+  }
+  .max-line{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
   }
 }
