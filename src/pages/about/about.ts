@@ -46,7 +46,7 @@ export class AboutPage {
     this.devs.push(new Dev(
       "",
       "Nguyễn Bùi Bảo Quyên",
-      "1610193@dlu.edu.vn"
+      "baoquyen17198@gmail.com"
     ));
   }
 
