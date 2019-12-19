@@ -13,9 +13,9 @@ export class FirebaseDataProvider {
     private ref: any;
     private members = [];
     private classrooms = [];
-    private rootRefDev = "/classrooms_dev/";
-    // private rootRefPro = "/classrooms_prod/";
-    private rootRef = this.rootRefDev;
+    // private rootRefDev = "/classrooms_dev/";
+    private rootRefPro = "/classrooms_prod/";
+    private rootRef = this.rootRefPro;
 
     constructor(private service: AngularFireDatabase) {
 

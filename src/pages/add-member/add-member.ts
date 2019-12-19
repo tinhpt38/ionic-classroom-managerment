@@ -50,13 +50,13 @@ export class AddMemberPage implements OnInit {
       this.data.id,
       this.data.classroom.id,
       this.data.name,
-      this.major,
+      this.major.toLowerCase(),
       this.birthday, 
       this.gender,
       this.idCard.toString(),
       this.phone,
       this.address,
-      this.role
+      this.role.toLowerCase(),
       );
       let classroom: Classroom = this.data.classroom;
       let members = classroom.members;
