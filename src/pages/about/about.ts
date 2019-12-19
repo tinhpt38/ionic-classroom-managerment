@@ -35,12 +35,12 @@ export class AboutPage {
     this.devs.push(new Dev(
       "https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.0-9/74693321_2556456397929059_6229254329409208320_o.jpg?_nc_cat=100&_nc_oc=AQlyVnIEZuOvv2IYFfLyGTkYltYYfYgm9oTzVY3UfinlOPfQ-KggKTQldLV3Po31l_E&_nc_ht=scontent.fsgn4-1.fna&oh=446b530d62a4b18d1535e5a6c8e05242&oe=5E68A948",
       "Lê Minh Nguyệt",
-      "1610176@dlu.edu.vn"
+      "nguyetnguyetrose9898@gmail.com "
     ));
     this.devs.push(new Dev(
       "",
       "Nguyễn Thị Thu Quyên",
-      "1610194@dlu.edu.vn"
+      "nguyenthithhuquyen51198@gmail.com "
     ));
     
     this.devs.push(new Dev(
