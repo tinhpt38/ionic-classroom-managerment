@@ -25,11 +25,15 @@ export class AuthenMemberIdPage implements OnInit{
   }
 
   onViewDetailClick(){
-    let prefix = this.memberID.substr(0,3);
-    if(this.classroom.prefix != prefix){
-      this.showErr("ID sinh viên không thuộc lớp!")
+    if(this.memberID == null){
+      this.showErr("Chưa nhập vào ID!")
     }else{
-      this.navCtrl.push(MembersPage, this.classroom);
+      let prefix = this.memberID.substr(0,3);
+      if(this.classroom.prefix != prefix){
+        this.showErr("ID sinh viên không thuộc lớp!")
+      }else{
+        this.navCtrl.push(MembersPage, this.classroom);
+      }
     }
   }
 

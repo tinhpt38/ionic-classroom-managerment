@@ -23,6 +23,7 @@ export class IntroduceClassroomPage implements OnInit{
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IntroduceClassroomPage');
+    this.preparingData();
   }
 
   ngOnInit(){
@@ -41,15 +42,13 @@ export class IntroduceClassroomPage implements OnInit{
 
   findRole(){
     this.classroom.members.forEach((val) =>{
-      if(val.role == "teacher"){
+      if(val.role.toLowerCase() == "teacher"){
         this.teacherName = val.name;
       }
-      if(val.role =="monitor"){
-        this.monitorName == val.name;
+      if(val.role.toLowerCase() == "monitor"){
+        this.monitorName = val.name;
       }
     })
-    this.monitorName = this.monitorName == null?"Not set":this.monitorName;
-    this.teacherName = this.teacherName == null?"Not set":this.teacherName;
   }
 
   findMale(){
@@ -66,7 +65,9 @@ export class IntroduceClassroomPage implements OnInit{
 
 
   onViewDetailClick(){
-    this.navCtrl.push(AuthenMemberIdPage, this.classroom);
+    this.navCtrl.push(AuthenMemberIdPage, this.classroom).then(()=>{
+      this.navCtrl.remove(this.navCtrl.getActive().index - 2,2);
+    });
   }
   
   onNewMemberClick(){

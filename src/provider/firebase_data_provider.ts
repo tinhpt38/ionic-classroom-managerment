@@ -40,7 +40,6 @@ export class FirebaseDataProvider {
             this.ref = firebase.database().ref(reft);
             this.service.list(this.ref).valueChanges().subscribe((values) => {
                 this.members = values;
-                console.log(this.members);
                 resolve(values);
             })
         })
@@ -104,9 +103,19 @@ export class FirebaseDataProvider {
     }
 
     deleteMember(classroom: Classroom, member:Member){
-        let indexOf = classroom.members.indexOf(member);
-        classroom.members.splice(indexOf,0);
+        let members: Member[] = classroom.members;
+        let indexOf = this.indexOf(members, member);
+        classroom.members.splice(indexOf,1);
         this.addClassroom(classroom);
+    }
+
+    indexOf(members: Member[], member: Member){
+        for(let i =0;i<members.length;i++){
+            if(members[i].id == member.id){
+                return i;
+            }
+        }
+        return -1;
     }
 
 }

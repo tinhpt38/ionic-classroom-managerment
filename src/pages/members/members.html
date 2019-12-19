@@ -5,6 +5,12 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
   <div *ngFor="let item of members">
     <div class="item-root" (click)="onItemClick(item)">
       <div class="avatar">
@@ -16,6 +22,6 @@
         <ion-label class="major">{{item.major}}</ion-label>
       </div>
     </div>
-
   </div>
+
 </ion-content>
